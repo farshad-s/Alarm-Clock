@@ -1,0 +1,28 @@
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+}
+
+.current-time-container {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+#set-alarm-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.add-alarm {
+  display: flex;
+  width: 40%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
