@@ -19,12 +19,20 @@ function updateTime() {
   if (seconds.innerText < 10) {
     seconds.innerText = "0" + seconds.innerText;
   }
+}
 
-  let alarmHour, alarmMinute;
-  let setAlarmTime = button.addEventListener("click", function () {
-    alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
-    alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
+function setAlarmTime() {
+  let today = new Date();
+
+  hours.innerText = today.getHours();
+  minutes.innerText = today.getMinutes();
+  seconds.innerText = today.getSeconds();
+
+  button.addEventListener("click", function () {
+    let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
+    let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
   });
 }
 
 setInterval(updateTime, 1000);
+setAlarmTime();
