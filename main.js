@@ -6,6 +6,8 @@ let today = new Date();
 
 function updateTime() {
   hours.innerText = today.getHours();
+  minutes.innerText = today.getMinutes();
+  seconds.innerText = today.getSeconds();
 }
 
 updateTime();
