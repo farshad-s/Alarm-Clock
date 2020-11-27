@@ -10,4 +10,11 @@ function updateTime() {
   seconds.innerText = today.getSeconds();
 }
 
+function addZeroToMinutes() {
+  if (minutes.innerText < 10) {
+    minutes.innerText = "0" + minutes.innerText;
+  }
+}
+
 updateTime();
+addZeroToMinutes();
