@@ -1,0 +1,7 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
