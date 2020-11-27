@@ -3,6 +3,7 @@ let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
 let button = document.getElementById("add-alarm-button");
 let selectedHour = document.getElementById("add-hour");
+let selectedMinute = document.getElementById("add-minute");
 
 function updateTime() {
   let today = new Date();
@@ -21,8 +22,10 @@ function updateTime() {
 }
 
 function setAlarm() {
+  let alarmHour, alarmMinute;
   let alarmTime = button.addEventListener("click", function () {
-    console.log(selectedHour.options[selectedHour.selectedIndex].text);
+    alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
+    alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
   });
 }
 
