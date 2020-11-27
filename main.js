@@ -1,6 +1,8 @@
 let hours = document.getElementById("hours");
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
+let button = document.getElementById("add-alarm-button");
+let selectedHour = document.getElementById("add-hour");
 
 function updateTime() {
   let today = new Date();
@@ -18,4 +20,11 @@ function updateTime() {
   }
 }
 
+function setAlarm() {
+  let alarmTime = button.addEventListener("click", function () {
+    console.log(selectedHour.options[selectedHour.selectedIndex].text);
+  });
+}
+
 setInterval(updateTime, 1000);
+setAlarm();
