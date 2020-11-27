@@ -23,7 +23,7 @@ function updateTime() {
 
 function setAlarm() {
   let alarmHour, alarmMinute;
-  let alarmTime = button.addEventListener("click", function () {
+  let setAlarmTime = button.addEventListener("click", function () {
     alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
     alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
   });
