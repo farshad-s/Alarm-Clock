@@ -19,9 +19,7 @@ function updateTime() {
   if (seconds.innerText < 10) {
     seconds.innerText = "0" + seconds.innerText;
   }
-}
 
-function setAlarm() {
   let alarmHour, alarmMinute;
   let setAlarmTime = button.addEventListener("click", function () {
     alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
@@ -30,4 +28,3 @@ function setAlarm() {
 }
 
 setInterval(updateTime, 1000);
-setAlarm();
