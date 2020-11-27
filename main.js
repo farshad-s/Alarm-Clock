@@ -21,18 +21,15 @@ function updateTime() {
   }
 }
 
-function setAlarmTime() {
-  let today = new Date();
-
-  hours.innerText = today.getHours();
-  minutes.innerText = today.getMinutes();
-  seconds.innerText = today.getSeconds();
+function setAlarm() {
+  updateTime();
 
   button.addEventListener("click", function () {
     let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
+    newAlarm = alarmHour + alarmMinute;
   });
 }
 
 setInterval(updateTime, 1000);
-setAlarmTime();
+setAlarm();
