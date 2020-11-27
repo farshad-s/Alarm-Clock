@@ -16,5 +16,12 @@ function addZeroToMinutes() {
   }
 }
 
+function addZeroToSeconds() {
+  if (seconds.innerText < 10) {
+    seconds.innerText = "0" + seconds.innerText;
+  }
+}
+
 updateTime();
 addZeroToMinutes();
+addZeroToSeconds();
