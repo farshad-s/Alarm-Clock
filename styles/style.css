@@ -32,7 +32,3 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
-.disable-alarm {
-  display: none;
-}
