@@ -10,15 +10,17 @@ let disableAlarmButton = document.getElementById("disable-alarm");
 const alarmSound = document.getElementById("alarm-sound");
 
 function updateTime() {
+  // Gets the current hour, minute, and second
   let today = new Date();
   hours.innerText = today.getHours();
   minutes.innerText = today.getMinutes();
   seconds.innerText = today.getSeconds();
 
+  // adds a 0 to minute if less than 10
   if (minutes.innerText < 10) {
     minutes.innerText = "0" + minutes.innerText;
   }
-
+  // adds a 0 to second if less than 10
   if (seconds.innerText < 10) {
     seconds.innerText = "0" + seconds.innerText;
   }
@@ -26,23 +28,25 @@ function updateTime() {
 
 function alarmSet() {
   addAlarmButton.addEventListener("click", function () {
+    // hour equals selected hour, minute equals selected minute from dropdown menu
     let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
-    let newAlarm = alarmHour + ":" + alarmMinute;
-    displayAlarmTime.innerText = newAlarm;
-
-    if (
-      displayAlarmTime.innerText ==
-      hours.innerText + ":" + minutes.innerText
-    ) {
-      alarmSound.play();
-
-      setTimeout(function () {
-        alarmSound.pause();
-      }, 1000);
-    }
+    // the selected alarm time is displayed
+    displayAlarmTime.innerText = alarmHour + ":" + alarmMinute;
   });
+}
+
+function playAlarm() {
+  // if the selected alarm and the current time match the alarm plays
+  if (displayAlarmTime.innerText == hours.innerText + ":" + minutes.innerText) {
+    alarmSound.play();
+    // alarm stops playing after 60 seconds
+    setTimeout(function () {
+      alarmSound.pause();
+    }, 60000);
+  }
 }
 
 setInterval(updateTime, 1000);
 alarmSet();
+setInterval(playAlarm, 1000);
