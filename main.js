@@ -69,8 +69,20 @@ function addToHourDropdown() {
   }
 }
 
+function addToMinuteDropdown() {
+  for (let i = 0; i <= 59; i++) {
+    let option = document.createElement("option");
+    option.text = i;
+    if (option.text < 10) {
+      option.text = "0" + option.text;
+    }
+    addMinute.add(option);
+  }
+}
+
 setInterval(updateTime, 1000);
 alarmSet();
 setInterval(playAlarm, 1000);
 disableAlarm();
 addToHourDropdown();
+addToMinuteDropdown();
