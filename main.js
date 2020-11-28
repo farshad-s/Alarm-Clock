@@ -28,7 +28,7 @@ function updateTime() {
 
 function alarmSet() {
   addAlarmButton.addEventListener("click", function () {
-    // hour equals selected hour, minute equals selected minute from dropdown menu
+    // When button is clicked hour equals selected hour, minute equals selected minute from dropdown menu
     let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
     // the selected alarm time is displayed
@@ -47,6 +47,15 @@ function playAlarm() {
   }
 }
 
+function disableAlarm() {
+  disableAlarmButton.addEventListener("click", function () {
+    // When button is clicked Alarm Disabled is displayed, Alarm sound is paused
+    displayAlarmTime.innerText = "Alarm Disabled";
+    alarmSound.pause();
+  });
+}
+
 setInterval(updateTime, 1000);
 alarmSet();
 setInterval(playAlarm, 1000);
+disableAlarm();
