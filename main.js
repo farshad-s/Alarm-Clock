@@ -11,12 +11,17 @@ function updateTime() {
   currentTime.innerText =
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-  if (minutes.innerText < 10) {
-    minutes.innerText = "0" + minutes.innerText;
+  if (today.getHours() < 10) {
+    currentTime.innerText = "0" + currentTime.innerText;
   }
 
-  if (seconds.innerText < 10) {
-    seconds.innerText = "0" + seconds.innerText;
+  if (today.getMinutes() < 10) {
+    currentTime.innerText =
+      today.getHours() + ":0" + today.getMinutes() + ":" + today.getSeconds();
+  }
+  if (today.getSeconds() < 10) {
+    currentTime.innerText =
+      today.getHours() + ":0" + today.getMinutes() + ":0" + today.getSeconds();
   }
 }
 
