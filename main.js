@@ -1,10 +1,11 @@
 let hours = document.getElementById("hours");
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
-let button = document.getElementById("add-alarm-button");
+let addAlarmButton = document.getElementById("add-alarm-button");
 let selectedHour = document.getElementById("add-hour");
 let selectedMinute = document.getElementById("add-minute");
 let displayAlarmTime = document.getElementById("alarm-set-time");
+let disableAlarm = document.getElementById("disable-alarm");
 
 const alarmSound = document.getElementById("alarm-sound");
 
@@ -24,12 +25,21 @@ function updateTime() {
 }
 
 function alarmSet() {
-  button.addEventListener("click", function () {
+  addAlarmButton.addEventListener("click", function () {
     let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
     let newAlarm = alarmHour + ":" + alarmMinute;
     displayAlarmTime.innerText = newAlarm;
+    disableAlarm.style.display = "block";
+
+    if (
+      displayAlarmTime.innerText ==
+      hours.innerText + ":" + minutes.innerText
+    ) {
+      alarmSound.play();
+    }
   });
 }
 
 setInterval(updateTime, 1000);
+alarmSet();
