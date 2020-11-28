@@ -21,7 +21,7 @@ function updateTime() {
   }
   if (today.getSeconds() < 10) {
     currentTime.innerText =
-      today.getHours() + ":0" + today.getMinutes() + ":0" + today.getSeconds();
+      today.getHours() + ":" + today.getMinutes() + ":0" + today.getSeconds();
   }
 }
 
