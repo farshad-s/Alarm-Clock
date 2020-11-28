@@ -63,6 +63,7 @@ function disableAlarm() {
   });
 }
 
+// adds the dropdown options for the 24 hours
 function addToHourDropdown() {
   for (let hour = 1; hour <= 24; hour++) {
     let option = document.createElement("option");
@@ -74,6 +75,7 @@ function addToHourDropdown() {
   }
 }
 
+// adds the dropdown options for the 60 minutes
 function addToMinuteDropdown() {
   for (let minute = 0; minute <= 59; minute++) {
     let option = document.createElement("option");
