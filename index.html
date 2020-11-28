@@ -14,11 +14,7 @@
   <body>
     <h1 class="title">Alarm Clock</h1>
     <div class="current-time-container">
-      <p id="hours">00</p>
-      <p class="colon">:</p>
-      <p id="minutes">00</p>
-      <p class="colon">:</p>
-      <p id="seconds">00</p>
+      <p class="current-time" id="current-time">00:00:00</p>
     </div>
     <p id="set-alarm-title">Set Alarm Time</p>
     <div class="add-alarm">
@@ -114,8 +110,8 @@
       </select>
       <button id="add-alarm-button">Add Alarm</button>
     </div>
-    <p class="alarm-set-title">You set an Alarm for</p>
-    <p class="alarm-set-time"></p>
+    <p class="alarm-set-title" id="alarm-set-title">You set an Alarm for</p>
+    <p class="alarm-set-time" id="alarm-set-time">5</p>
     <script src="main.js"></script>
   </body>
 </html>
