@@ -7,6 +7,9 @@ let selectedMinute = document.getElementById("add-minute");
 let displayAlarmTime = document.getElementById("alarm-set-time");
 let disableAlarmButton = document.getElementById("disable-alarm");
 
+let addHour = document.getElementById("add-hour");
+let addMinute = document.getElementById("add-minute");
+
 const alarmSound = document.getElementById("alarm-sound");
 
 function updateTime() {
@@ -55,7 +58,19 @@ function disableAlarm() {
   });
 }
 
+function addToHourDropdown() {
+  for (let i = 1; i <= 24; i++) {
+    let option = document.createElement("option");
+    option.text = i;
+    if (option.text < 10) {
+      option.text = "0" + option.text;
+    }
+    addHour.add(option);
+  }
+}
+
 setInterval(updateTime, 1000);
 alarmSet();
 setInterval(playAlarm, 1000);
 disableAlarm();
+addToHourDropdown();
