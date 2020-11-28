@@ -4,7 +4,7 @@ let selectedHour = document.getElementById("add-hour");
 let selectedMinute = document.getElementById("add-minute");
 let displayAlarmTime = document.getElementById("alarm-set-time");
 
-// const alarmSound = new Audio("Alarm-ringtone.mp3");
+const alarmSound = document.getElementById("alarm-sound");
 
 function updateTime() {
   let today = new Date();
@@ -30,8 +30,6 @@ button.addEventListener("click", function () {
   let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
   let newAlarm = alarmHour + ":" + alarmMinute;
   displayAlarmTime.innerText = newAlarm;
-  console.log(displayAlarmTime.innerText);
-  console.log(newAlarm);
 });
 
 setInterval(updateTime, 1000);
