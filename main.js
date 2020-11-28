@@ -4,6 +4,9 @@ let seconds = document.getElementById("seconds");
 let button = document.getElementById("add-alarm-button");
 let selectedHour = document.getElementById("add-hour");
 let selectedMinute = document.getElementById("add-minute");
+let displayAlarmTime = document.getElementById("alarm-set-time");
+
+// const alarmSound = new Audio("Alarm-ringtone.mp3");
 
 function updateTime() {
   let today = new Date();
@@ -19,6 +22,8 @@ function updateTime() {
   if (seconds.innerText < 10) {
     seconds.innerText = "0" + seconds.innerText;
   }
+
+  setInterval(updateTime, 1000);
 }
 
 function setAlarm() {
@@ -27,9 +32,11 @@ function setAlarm() {
   button.addEventListener("click", function () {
     let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
-    newAlarm = alarmHour + alarmMinute;
+    let newAlarm = alarmHour + ":" + alarmMinute;
+    displayAlarmTime.innerText = newAlarm;
+    console.log(displayAlarmTime.innerText);
   });
 }
 
-setInterval(updateTime, 1000);
+updateTime();
 setAlarm();
