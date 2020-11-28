@@ -27,8 +27,12 @@ body {
   justify-content: space-evenly;
 }
 
-.alarm-set-title,
-.alarm-set-time {
+.alarm-set {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.disable-alarm {
+  display: none;
 }
