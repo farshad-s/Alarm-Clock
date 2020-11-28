@@ -59,9 +59,9 @@ function disableAlarm() {
 }
 
 function addToHourDropdown() {
-  for (let i = 1; i <= 24; i++) {
+  for (let hour = 1; hour <= 24; hour++) {
     let option = document.createElement("option");
-    option.text = i;
+    option.text = hour;
     if (option.text < 10) {
       option.text = "0" + option.text;
     }
@@ -70,9 +70,9 @@ function addToHourDropdown() {
 }
 
 function addToMinuteDropdown() {
-  for (let i = 0; i <= 59; i++) {
+  for (let minute = 0; minute <= 59; minute++) {
     let option = document.createElement("option");
-    option.text = i;
+    option.text = minute;
     if (option.text < 10) {
       option.text = "0" + option.text;
     }
