@@ -1,4 +1,6 @@
-let currentTime = document.getElementById("current-time");
+let hours = document.getElementById("hours");
+let minutes = document.getElementById("minutes");
+let seconds = document.getElementById("seconds");
 let button = document.getElementById("add-alarm-button");
 let selectedHour = document.getElementById("add-hour");
 let selectedMinute = document.getElementById("add-minute");
@@ -8,28 +10,26 @@ const alarmSound = document.getElementById("alarm-sound");
 
 function updateTime() {
   let today = new Date();
-  currentTime.innerText =
-    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  hours.innerText = today.getHours();
+  minutes.innerText = today.getMinutes();
+  seconds.innerText = today.getSeconds();
 
-  if (today.getHours() < 10) {
-    currentTime.innerText = "0" + currentTime.innerText;
+  if (minutes.innerText < 10) {
+    minutes.innerText = "0" + minutes.innerText;
   }
 
-  if (today.getMinutes() < 10) {
-    currentTime.innerText =
-      today.getHours() + ":0" + today.getMinutes() + ":" + today.getSeconds();
-  }
-  if (today.getSeconds() < 10) {
-    currentTime.innerText =
-      today.getHours() + ":" + today.getMinutes() + ":0" + today.getSeconds();
+  if (seconds.innerText < 10) {
+    seconds.innerText = "0" + seconds.innerText;
   }
 }
 
-button.addEventListener("click", function () {
-  let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
-  let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
-  let newAlarm = alarmHour + ":" + alarmMinute;
-  displayAlarmTime.innerText = newAlarm;
-});
+function alarmSet() {
+  button.addEventListener("click", function () {
+    let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
+    let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
+    let newAlarm = alarmHour + ":" + alarmMinute;
+    displayAlarmTime.innerText = newAlarm;
+  });
+}
 
 setInterval(updateTime, 1000);
