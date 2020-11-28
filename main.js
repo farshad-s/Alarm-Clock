@@ -5,7 +5,7 @@ let addAlarmButton = document.getElementById("add-alarm-button");
 let selectedHour = document.getElementById("add-hour");
 let selectedMinute = document.getElementById("add-minute");
 let displayAlarmTime = document.getElementById("alarm-set-time");
-let disableAlarm = document.getElementById("disable-alarm");
+let disableAlarmButton = document.getElementById("disable-alarm");
 
 const alarmSound = document.getElementById("alarm-sound");
 
@@ -30,13 +30,16 @@ function alarmSet() {
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
     let newAlarm = alarmHour + ":" + alarmMinute;
     displayAlarmTime.innerText = newAlarm;
-    disableAlarm.style.display = "block";
 
     if (
       displayAlarmTime.innerText ==
       hours.innerText + ":" + minutes.innerText
     ) {
       alarmSound.play();
+
+      setTimeout(function () {
+        alarmSound.pause();
+      }, 1000);
     }
   });
 }
