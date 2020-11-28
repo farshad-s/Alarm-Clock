@@ -32,10 +32,15 @@ function updateTime() {
 function alarmSet() {
   addAlarmButton.addEventListener("click", function () {
     // When button is clicked hour equals selected hour, minute equals selected minute from dropdown menu
-    let alarmHour = selectedHour.options[selectedHour.selectedIndex].text;
-    let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex].text;
-    // the selected alarm time is displayed
-    displayAlarmTime.innerText = alarmHour + ":" + alarmMinute;
+    let alarmHour = selectedHour.options[selectedHour.selectedIndex];
+    let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex];
+    // if add alarm is clicked whilst the option is Select Hour or Select Minute, it will return Time Not Selected
+    if (alarmHour.value == "" || alarmMinute.value == "") {
+      displayAlarmTime.innerText = "Time not selected";
+    } else {
+      // the selected alarm time is displayed
+      displayAlarmTime.innerText = alarmHour.text + ":" + alarmMinute.text;
+    }
   });
 }
 
