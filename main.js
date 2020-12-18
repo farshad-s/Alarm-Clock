@@ -32,12 +32,10 @@ function alarmSet() {
     let alarmHour = selectedHour.options[selectedHour.selectedIndex];
     let alarmMinute = selectedMinute.options[selectedMinute.selectedIndex];
     // if add alarm is clicked whilst the option is Select Hour or Select Minute, it will return Time Not Selected
-    if (alarmHour.value == "" || alarmMinute.value == "") {
-      displayAlarmTime.innerText = "Time not selected";
-    } else {
-      // the selected alarm time is displayed
-      displayAlarmTime.innerText = alarmHour.text + ":" + alarmMinute.text;
-    }
+    // otherwise the selected alarm time is displayed
+    alarmHour.value == "" || alarmMinute.value == ""
+      ? (displayAlarmTime.innerText = "Time not selected")
+      : (displayAlarmTime.innerText = alarmHour.text + ":" + alarmMinute.text);
   });
 }
 
