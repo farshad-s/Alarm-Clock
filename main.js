@@ -20,10 +20,14 @@ function updateTime() {
   seconds.innerText = today.getSeconds();
 
   // adds a 0 to minute if less than 10
-  minutes.innerText < 10 ? (minutes.innerText = "0" + minutes.innerText) : "";
+  if (minutes.innerText < 10) {
+    minutes.innerText = "0" + minutes.innerText;
+  }
 
   // adds a 0 to second if less than 10
-  seconds.innerText < 10 ? (minutes.innerText = "0" + minutes.innerText) : "";
+  if (seconds.innerText < 10) {
+    seconds.innerText = "0" + seconds.innerText;
+  }
 }
 
 function alarmSet() {
@@ -41,7 +45,7 @@ function alarmSet() {
 
 function playAlarm() {
   // if the selected alarm and the current time match the alarm plays
-  // otherwise alarm stops playing after 60 seconds
+  // alarm stops playing after 60 seconds
   displayAlarmTime.innerText == hours.innerText + ":" + minutes.innerText
     ? alarmSound.play()
     : setTimeout(function () {
