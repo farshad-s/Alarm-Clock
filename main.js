@@ -20,13 +20,10 @@ function updateTime() {
   seconds.innerText = today.getSeconds();
 
   // adds a 0 to minute if less than 10
-  if (minutes.innerText < 10) {
-    minutes.innerText = "0" + minutes.innerText;
-  }
+  minutes.innerText < 10 ? (minutes.innerText = "0" + minutes.innerText) : "";
+
   // adds a 0 to second if less than 10
-  if (seconds.innerText < 10) {
-    seconds.innerText = "0" + seconds.innerText;
-  }
+  seconds.innerText < 10 ? (minutes.innerText = "0" + minutes.innerText) : "";
 }
 
 function alarmSet() {
