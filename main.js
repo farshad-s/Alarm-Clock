@@ -41,13 +41,12 @@ function alarmSet() {
 
 function playAlarm() {
   // if the selected alarm and the current time match the alarm plays
-  if (displayAlarmTime.innerText == hours.innerText + ":" + minutes.innerText) {
-    alarmSound.play();
-    // alarm stops playing after 60 seconds
-    setTimeout(function () {
-      alarmSound.pause();
-    }, 60000);
-  }
+  // otherwise alarm stops playing after 60 seconds
+  displayAlarmTime.innerText == hours.innerText + ":" + minutes.innerText
+    ? alarmSound.play()
+    : setTimeout(function () {
+        alarmSound.pause();
+      }, 60000);
 }
 
 function disableAlarm() {
