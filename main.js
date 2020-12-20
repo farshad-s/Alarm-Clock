@@ -61,9 +61,7 @@ function addToHourDropdown() {
   for (let hour = 1; hour <= 24; hour++) {
     let option = document.createElement("option");
     option.text = hour;
-    if (option.text < 10) {
-      option.text = "0" + option.text;
-    }
+    option.text < 10 ? (option.text = "0" + option.text) : "";
     addHour.add(option);
   }
 }
@@ -73,9 +71,7 @@ function addToMinuteDropdown() {
   for (let minute = 0; minute <= 59; minute++) {
     let option = document.createElement("option");
     option.text = minute;
-    if (option.text < 10) {
-      option.text = "0" + option.text;
-    }
+    option.text < 10 ? (option.text = "0" + option.text) : "";
     addMinute.add(option);
   }
 }
